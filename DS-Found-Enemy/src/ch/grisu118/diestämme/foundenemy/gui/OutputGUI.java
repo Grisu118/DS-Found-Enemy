@@ -1,19 +1,12 @@
 package ch.grisu118.diestämme.foundenemy.gui;
 
-import javax.swing.JPanel;
-
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import ch.grisu118.diestämme.foundenemy.business.Objects.Tribe;
-
-import java.awt.GridLayout;
-
-import javax.swing.JLabel;
-import javax.swing.JTextArea;
-import javax.swing.JViewport;
-import javax.swing.JButton;
 
 @SuppressWarnings("serial")
 public class OutputGUI extends JPanel {

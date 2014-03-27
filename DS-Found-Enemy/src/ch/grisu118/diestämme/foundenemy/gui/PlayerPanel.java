@@ -1,20 +1,17 @@
 package ch.grisu118.diestämme.foundenemy.gui;
 
+import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 
-import java.awt.BorderLayout;
-
-import javax.swing.JLabel;
-
 import ch.grisu118.diestämme.foundenemy.business.Objects.Player;
 import ch.grisu118.diestämme.foundenemy.business.Objects.Tribe;
-
-import java.awt.GridLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 
 @SuppressWarnings("serial")
 public class PlayerPanel extends JPanel {
