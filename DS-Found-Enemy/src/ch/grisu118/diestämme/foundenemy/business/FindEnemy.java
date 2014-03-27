@@ -30,7 +30,8 @@ public class FindEnemy {
 				targets[j++] = i;
 			}
 		}
-		
+		if (targets.length == 0)
+			return null;
 		return targets;
 	}
 }
