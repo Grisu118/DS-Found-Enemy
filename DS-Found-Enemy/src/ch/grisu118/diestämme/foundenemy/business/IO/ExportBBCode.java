@@ -1,4 +1,4 @@
-package ch.grisu118.diestämme.foundenemy.business;
+package ch.grisu118.diestämme.foundenemy.business.IO;
 
 import ch.grisu118.diestämme.foundenemy.business.Objects.Tribe;
 
@@ -7,7 +7,7 @@ public class ExportBBCode {
 	private ExportBBCode() {
 	}
 
-	public static String[] exportToBBCode(Tribe ownTribe, Tribe enemyTribe) {
+	public static String[] exportToBBCodeTable(Tribe ownTribe, Tribe enemyTribe) {
 		String[] exportString = new String[ownTribe.getMemberCount() / 10];
 		String start = "[table][**]Eigener Spieler[||]Mögliche Gegner[/**]";
 		String end = "[/table]";
@@ -49,10 +49,9 @@ public class ExportBBCode {
 			exportString[i] += end;
 		}
 
-		// [*]Inhalt 1[|]Inhalt 2[|]Inhalt 3
-		for (String string : exportString) {
-			System.out.println(string);
-		}
+//		for (String string : exportString) {
+//			System.out.println(string);
+//		}
 		return exportString;
 
 	}
