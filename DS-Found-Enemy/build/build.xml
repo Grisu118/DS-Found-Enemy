@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 
-<project name="Software Construction Lab" default="compile" basedir=".." xmlns:jacoco="antlib:org.jacoco.ant">
+<project name="DS Found Enemy" default="compile" basedir=".." xmlns:jacoco="antlib:org.jacoco.ant">
 	<property file="build/build.properties" />
 
 	<!-- The application's classpath -->
 	<path id="application.classpath">
 		<fileset dir="${lib.dir}">
-			<include name="**/*.jar" />
+			<include name="**/*.zip" />
 		</fileset>
 	</path>
 
 	<!-- The build tools classpath -->
 	<path id="build.classpath">
 		<fileset dir="${build.lib.dir}">
-			<include name="*.jar" />
+			<include name="*.zip" />
 		</fileset>
 		<pathelement location="${bin.classes.dir}" />
 		<path refid="application.classpath" />
@@ -23,7 +23,7 @@
 	<!-- Define the additional ant tasks     -->
 	<taskdef resource="checkstyletask.properties" classpathref="build.classpath" />
 	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
-		<classpath path="${build.lib.dir}/jacocoant.jar" />
+		<classpath path="${build.lib.dir}/jacocoant.zip" />
 	</taskdef>
 
 	<target name="clean">
