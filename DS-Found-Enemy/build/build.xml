@@ -124,7 +124,7 @@
 		<javadoc sourcepath="${src.dir}" destdir="${doc.api.dir}" classpathref="application.classpath" />
 	</target>
 
-	<target name="all" depends="checkstyle, Javadoc, jar">
+	<target name="all" depends="jar">
 	</target>
 
 </project>
