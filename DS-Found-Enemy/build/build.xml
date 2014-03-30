@@ -61,7 +61,7 @@
 		<java jar="${bin.jar.dir}/${name}-${version}.jar" fork="true" />
 	</target>
 
-	<target name="jar" depends="compile" description="Create jar distribution">
+	<target name="jar" depends="junit" description="Create jar distribution">
 		<jar jarfile="${bin.jar.dir}/${name}-${version}.jar" basedir="${bin.classes.dir}" excludes="**/*Test*.class">
 			<manifest>
 				<attribute name="Main-Class" value="${main.class}" />
@@ -73,7 +73,7 @@
 	</target>
 
 	<target name="compile_test" depends="compile" description="Compile the sources">
-		<javac includeantruntime="false" srcdir="${test.dir}" destdir="${bin.classes.dir}" classpathref="build.classpath" deprecation="on" debug="on" />
+		<javac includeantruntime="false" srcdir="${test.dir}" destdir="${bin.classes.dir}" classpathref="build.classpath" deprecation="on" debug="on" encoding="UTF-16"/>
 		<!--	<copy todir="${bin.classes.dir}">
 			<fileset dir="${res.dir}">
 				<include name="**/*.xml" />
@@ -120,7 +120,7 @@
 
 
 	<target name="Javadoc" depends="prepare">
-		<javadoc sourcepath="${src.dir}" destdir="${doc.api.dir}" classpathref="application.classpath" />
+		<javadoc sourcepath="${src.dir}" destdir="${doc.api.dir}" classpathref="application.classpath" encoding="UTF-16"/>
 	</target>
 
 	<target name="exe_server" depends="jar">
@@ -129,7 +129,7 @@
 		<launch4j configFile="${l4j.dir}/DS_Found_Enemy.xml" />
 	</target>
 
-	<target name="all" depends="jar, exe_server">
+	<target name="all" depends="Javadoc, jar, exe_server">
 	</target>
 
 </project>
