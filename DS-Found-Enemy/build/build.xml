@@ -91,7 +91,7 @@
 	</target>
 
 	<target name="junit" depends="compile_test">
-		<jacoco:coverage destfile="${log.jacoco.dir}/jacoco.exec">
+		<jacoco:coverage destfile="${log.jacoco.dir}/jacoco.exec" excludes="*GUI*.java:PlayerPanel.java:GhostText.java:BBCodeOutput.java">
 			<junit printsummary="yes" haltonfailure="yes" haltonerror="yes" fork="true">
 				<classpath>
 					<path refid="build.classpath" />
