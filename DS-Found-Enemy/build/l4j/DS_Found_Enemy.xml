@@ -1,0 +1,17 @@
+<launch4jConfig>
+  <headerType>gui</headerType>
+  <jar>../../bin/jar/DS-Found-Enemy-0.1.jar</jar>
+  <outfile>../../bin/jar/DS-Found-Enemy.exe</outfile>
+  <errTitle>DS Found Enemy</errTitle>
+  <chdir>.</chdir>
+  <icon>SimpleApp.ico</icon>
+  <jre>
+    <minVersion>1.7.0</minVersion>
+  </jre>
+  <splash>
+    <file>splash.bmp</file>
+    <waitForWindow>true</waitForWindow>
+    <timeout>60</timeout>
+    <timeoutErr>true</timeoutErr>
+  </splash>
+</launch4jConfig>

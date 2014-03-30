@@ -43,11 +43,11 @@
 		<mkdir dir="${doc.api.dir}" />
 		<mkdir dir="${log.report.checkstyle.dir}" />
 		<mkdir dir="${log.report.test.dir}" />
-		<mkdir dir="${log.jacoco.dir}"/>
+		<mkdir dir="${log.jacoco.dir}" />
 	</target>
 
 	<target name="compile" depends="prepare" description="Compile the sources">
-		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${bin.classes.dir}" classpathref="application.classpath" deprecation="on" debug="on" encoding="UTF-16"/>
+		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${bin.classes.dir}" classpathref="application.classpath" deprecation="on" debug="on" encoding="UTF-16" />
 		<!--<copy todir="${bin.classes.dir}">
 			<fileset dir="${res.dir}">
 				<include name="**/*.xml" />
@@ -106,7 +106,6 @@
 		</jacoco:coverage>
 	</target>
 
-
 	<target name="checkstyle" depends="compile">
 
 		<taskdef resource="checkstyletask.properties" classpathref="build.classpath" />
@@ -124,7 +123,13 @@
 		<javadoc sourcepath="${src.dir}" destdir="${doc.api.dir}" classpathref="application.classpath" />
 	</target>
 
-	<target name="all" depends="jar">
+	<target name="exe_server" depends="jar">
+		<taskdef name="launch4j" classname="net.sf.launch4j.ant.Launch4jTask" classpath="${launch4j.dir.server}/launch4j.jar
+			    :${launch4j.dir.server}/lib/xstream.jar" />
+		<launch4j configFile="${l4j.dir}/DS_Found_Enemy.xml" />
+	</target>
+
+	<target name="all" depends="jar, exe_server">
 	</target>
 
 </project>
