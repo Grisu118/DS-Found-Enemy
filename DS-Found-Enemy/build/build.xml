@@ -91,7 +91,7 @@
 	</target>
 
 	<target name="junit" depends="compile_test">
-		<jacoco:coverage destfile="${log.jacoco.dir}/jacoco.exec" excludes="*GUI*:PlayerPanel:GhostText:BBCodeOutput">
+		<jacoco:coverage destfile="${log.jacoco.dir}/jacoco.exec">
 			<junit printsummary="yes" haltonfailure="yes" haltonerror="yes" fork="true">
 				<classpath>
 					<path refid="build.classpath" />
@@ -109,7 +109,7 @@
 	<target name="checkstyle" depends="compile">
 
 		<taskdef resource="checkstyletask.properties" classpathref="build.classpath" />
-		<checkstyle classpathref="build.classpath" config="${build.dir}/swc_checks.xml" failureproperty="checkstyle.failure">
+		<checkstyle classpathref="build.classpath" config="${build.dir}/swc_checks.xml" failureproperty="checkstyle.failure" >
 			<property key="config_loc" value="./" />
 			<formatter type="plain" />
 			<formatter type="plain" tofile="${log.report.checkstyle.dir}/checkstyle_report.txt" />
