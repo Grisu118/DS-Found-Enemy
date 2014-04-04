@@ -36,7 +36,7 @@
 
 
 
-	<target name="prepare" depends="clean">
+	<target name="prepare" >
 		<mkdir dir="${bin.classes.dir}" />
 		<mkdir dir="${bin.jar.dir}" />
 		<mkdir dir="${log.report.dir}" />
@@ -91,7 +91,7 @@
 	</target>
 
 	<target name="junit" depends="compile_test">
-		<jacoco:coverage destfile="${log.jacoco.dir}/jacoco.exec">
+		<jacoco:coverage destfile="${log.jacoco.dir}/jacoco.exec" excludes="*UI*">
 			<junit printsummary="yes" haltonfailure="yes" haltonerror="yes" fork="true">
 				<classpath>
 					<path refid="build.classpath" />
@@ -119,7 +119,7 @@
 	</target>
 
 
-	<target name="Javadoc" depends="prepare">
+	<target name="javadoc" depends="prepare">
 		<javadoc sourcepath="${src.dir}" destdir="${doc.api.dir}" classpathref="application.classpath" encoding="UTF-16"/>
 	</target>
 
@@ -129,7 +129,7 @@
 		<launch4j configFile="${l4j.dir}/DS_Found_Enemy.xml" />
 	</target>
 
-	<target name="all" depends="Javadoc, jar, exe_server">
+	<target name="all" depends="clean, javadoc, jar, exe_server">
 	</target>
 
 </project>
