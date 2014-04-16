@@ -1,5 +1,0 @@
-Testsuite: ch.grisu118.diestaemme.foundenemy.business.IO.ExportBBCodeTest
-Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 0.091 sec
-
-Testcase: testAddTag took 0.016 sec
-Testcase: testExportToBBCodeTable took 0.001 sec
