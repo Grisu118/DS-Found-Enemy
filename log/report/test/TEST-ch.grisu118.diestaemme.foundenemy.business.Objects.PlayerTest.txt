@@ -1,0 +1,6 @@
+Testsuite: ch.grisu118.diestaemme.foundenemy.business.Objects.PlayerTest
+Tests run: 3, Failures: 0, Errors: 0, Time elapsed: 0.084 sec
+
+Testcase: testPlayer took 0.011 sec
+Testcase: testEquals took 0.001 sec
+Testcase: testTargets took 0.001 sec
